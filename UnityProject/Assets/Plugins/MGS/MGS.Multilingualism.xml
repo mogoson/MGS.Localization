@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MGS.Multilingualism</name>
+    </assembly>
+    <members>
+        <member name="T:MGS.Multilingualism.IMultilingual">
+            <summary>
+            Interface for multilingualism.
+            </summary>
+        </member>
+        <member name="M:MGS.Multilingualism.IMultilingual.Initialize(System.String)">
+            <summary>
+            Initialize the directory of multilingualism files.
+            </summary>
+            <param name="directory">The directory of multilingualism files.</param>
+        </member>
+        <member name="M:MGS.Multilingualism.IMultilingual.SetLanguage(System.String)">
+            <summary>
+            Set language by name.
+            </summary>
+            <param name="name">Name of language (Config in the LanguageSettings).</param>
+            <returns>Set language succeed?</returns>
+        </member>
+        <member name="M:MGS.Multilingualism.IMultilingual.GetParagraph(System.String)">
+            <summary>
+            Get a paragraph text of key in language.
+            </summary>
+            <param name="key">Key of paragraph text.</param>
+            <returns>A paragraph text of key in language.</returns>
+        </member>
+        <member name="T:MGS.Multilingualism.MultilingualUtility">
+            <summary>
+            Utility for multilingualism.
+            </summary>
+        </member>
+        <member name="F:MGS.Multilingualism.MultilingualUtility.SEPARATOR">
+            <summary>
+            Separator of paragraph key and value.
+            </summary>
+        </member>
+        <member name="F:MGS.Multilingualism.MultilingualUtility.languages">
+            <summary>
+            Languages content list.
+            </summary>
+        </member>
+        <member name="F:MGS.Multilingualism.MultilingualUtility.current">
+            <summary>
+            Current language.
+            </summary>
+        </member>
+        <member name="F:MGS.Multilingualism.MultilingualUtility.directory">
+            <summary>
+            The directory of multilingualism files.
+            </summary>
+        </member>
+        <member name="M:MGS.Multilingualism.MultilingualUtility.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:MGS.Multilingualism.MultilingualUtility.Initialize(System.String)">
+            <summary>
+            Initialize the directory of multilingualism files.
+            </summary>
+            <param name="directory">The directory of multilingualism files.</param>
+        </member>
+        <member name="M:MGS.Multilingualism.MultilingualUtility.SetLanguage(System.String)">
+            <summary>
+            Set language by name.
+            </summary>
+            <param name="name">Name of language (Config in the LanguageSettings).</param>
+            <returns>Set language succeed?</returns>
+        </member>
+        <member name="M:MGS.Multilingualism.MultilingualUtility.GetParagraph(System.String)">
+            <summary>
+            Get a paragraph text of key in language.
+            </summary>
+            <param name="key">Key of paragraph text.</param>
+            <returns>A paragraph text of key in language.</returns>
+        </member>
+    </members>
+</doc>
