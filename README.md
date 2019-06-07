@@ -1,5 +1,5 @@
-# MGS-Multilingualism
-- [ÖÐÎÄÊÖ²á](./README_ZH.md)
+ï»¿# MGS-Multilingualism
+- [ä¸­æ–‡æ‰‹å†Œ](./README_ZH.md)
 
 ## Summary
 - Multilingualism utility for project develop.
