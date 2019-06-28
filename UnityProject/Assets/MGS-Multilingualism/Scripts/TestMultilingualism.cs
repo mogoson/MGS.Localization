@@ -10,6 +10,7 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using MGS.Common.Utility;
 using UnityEngine;
 
 namespace MGS.Multilingualism

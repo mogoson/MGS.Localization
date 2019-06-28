@@ -230,26 +230,6 @@
             Single instance of the specified type T.
             </summary>
         </member>
-        <member name="T:MGS.Common.Enum.MirrorMode">
-            <summary>
-            Mode of mirror.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Enum.MirrorMode.Horizontal">
-            <summary>
-            Horizontal mirror.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Enum.MirrorMode.Vertical">
-            <summary>
-            Vertical mirror.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Enum.MirrorMode.Both">
-            <summary>
-            Both horizontal and vertical mirror.
-            </summary>
-        </member>
         <member name="T:MGS.Common.IO.DirectoryUtility">
             <summary>
             Utility for directory.
@@ -944,33 +924,6 @@
             </summary>
             <param name="source">Data source.</param>
             <returns>Smooth result.</returns>
-        </member>
-        <member name="T:MGS.Common.Structure.Range">
-            <summary>
-            Range form min to max.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Structure.Range.min">
-            <summary>
-            Min value of range.
-            </summary>
-        </member>
-        <member name="F:MGS.Common.Structure.Range.max">
-            <summary>
-            Max value of range.
-            </summary>
-        </member>
-        <member name="P:MGS.Common.Structure.Range.Length">
-            <summary>
-            Length of range from min to max.
-            </summary>
-        </member>
-        <member name="M:MGS.Common.Structure.Range.#ctor(System.Single,System.Single)">
-            <summary>
-            Constructor.
-            </summary>
-            <param name="min">Min value of range.</param>
-            <param name="max">Max value of range.</param>
         </member>
     </members>
 </doc>
