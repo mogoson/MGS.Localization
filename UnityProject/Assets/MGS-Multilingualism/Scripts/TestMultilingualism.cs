@@ -30,9 +30,13 @@ namespace MGS.Multilingualism
         #region Private Method
         private void Start()
         {
-            MultilingualUtility.Instance.Initialize(Application.dataPath + "/Resources/Multilingualism/");
-            MultilingualUtility.Instance.SetLanguage(languages[0]);
-            helloWorldContent = MultilingualUtility.Instance.GetParagraph(helloWorldKey);
+            foreach (var language in languages)
+            {
+                var languageFile = Application.dataPath + "/Resources/Multilingualism/" + language + ".txt";
+                MultilingualUtility.Instance.Deserialize(languageFile);
+            }
+
+            helloWorldContent = MultilingualUtility.Instance.GetParagraph(languages[0], helloWorldKey);
         }
 
         private void OnGUI()
@@ -45,17 +49,12 @@ namespace MGS.Multilingualism
 
             if (GUILayout.Button(languages[0]))
             {
-                MultilingualUtility.Instance.SetLanguage(languages[0]);
+                helloWorldContent = MultilingualUtility.Instance.GetParagraph(languages[0], helloWorldKey);
             }
 
             if (GUILayout.Button(languages[1]))
             {
-                MultilingualUtility.Instance.SetLanguage(languages[1]);
-            }
-
-            if (GUILayout.Button("Reload"))
-            {
-                helloWorldContent = MultilingualUtility.Instance.GetParagraph(helloWorldKey);
+                helloWorldContent = MultilingualUtility.Instance.GetParagraph(languages[1], helloWorldKey);
             }
 
             GUILayout.EndHorizontal();

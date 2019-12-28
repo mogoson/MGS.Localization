@@ -34,28 +34,10 @@
             Animation is playing?
             </summary>
         </member>
-        <member name="M:MGS.UCommon.UAnimation.MonoAnimation.Awake">
-            <summary>
-            Awake animation.
-            </summary>
-        </member>
-        <member name="M:MGS.UCommon.UAnimation.MonoAnimation.Initialize">
-            <summary>
-            Initialize animation.
-            </summary>
-        </member>
-        <member name="M:MGS.UCommon.UAnimation.MonoAnimation.Play(System.Object)">
+        <member name="M:MGS.UCommon.UAnimation.MonoAnimation.Play">
             <summary>
             Play animation.
             </summary>
-            <param name="data">Animation data.</param>
-        </member>
-        <member name="M:MGS.UCommon.UAnimation.MonoAnimation.Refresh(System.Object)">
-            <summary>
-            Refresh animation.
-            </summary>
-            <param name="data">Animation data.</param>
-            <returns>Succeed?</returns>
         </member>
         <member name="M:MGS.UCommon.UAnimation.MonoAnimation.Pause">
             <summary>
@@ -93,18 +75,10 @@
             Animation is playing?
             </summary>
         </member>
-        <member name="M:MGS.UCommon.UAnimation.IAnimation.Play(System.Object)">
+        <member name="M:MGS.UCommon.UAnimation.IAnimation.Play">
             <summary>
             Play animation.
             </summary>
-            <param name="data">Animation data.</param>
-        </member>
-        <member name="M:MGS.UCommon.UAnimation.IAnimation.Refresh(System.Object)">
-            <summary>
-            Refresh animation.
-            </summary>
-            <param name="data">Animation data.</param>
-            <returns>Succeed?</returns>
         </member>
         <member name="M:MGS.UCommon.UAnimation.IAnimation.Pause">
             <summary>
@@ -141,6 +115,198 @@
             <summary>
             Animation play like ping pong.
             </summary>
+        </member>
+        <member name="T:MGS.UCommon.Event.MonoEventTrigger">
+            <summary>
+            Event trigger for UI behaviour.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onPointerEnter">
+            <summary>
+            On pointer enter event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onPointerExit">
+            <summary>
+            On pointer exit event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onPointerDown">
+            <summary>
+            On pointer down event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onPointerUp">
+            <summary>
+            On pointer up event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onPointerClick">
+            <summary>
+            On pointer click event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onBeginDrag">
+            <summary>
+            On begin drag event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onInitializePotentialDrag">
+            <summary>
+            On initialize potential drag event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onDrag">
+            <summary>
+            On drag event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onEndDrag">
+            <summary>
+            On end drag event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onDrop">
+            <summary>
+            On drop event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onScroll">
+            <summary>
+            On scroll event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onUpdateSelected">
+            <summary>
+            On update selected event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onSelect">
+            <summary>
+            On select event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onDeselect">
+            <summary>
+            On deselect event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onMove">
+            <summary>
+            On move event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onSubmit">
+            <summary>
+            On submit event.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.Event.MonoEventTrigger.onCancel">
+            <summary>
+            On cancel event.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnPointerEnter(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            On pointer enter.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnPointerExit(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            On pointer exit.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnPointerDown(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            On pointer down.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnPointerUp(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            On pointer up.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnPointerClick(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            On pointer click.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnBeginDrag(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            On begin drag.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnInitializePotentialDrag(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            On initialize potential drag.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnDrag(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            On drag.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnEndDrag(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            On end drag.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnDrop(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            On drop.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnScroll(UnityEngine.EventSystems.PointerEventData)">
+            <summary>
+            On scroll.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnUpdateSelected(UnityEngine.EventSystems.BaseEventData)">
+            <summary>
+            On update selected.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnSelect(UnityEngine.EventSystems.BaseEventData)">
+            <summary>
+            On select.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnDeselect(UnityEngine.EventSystems.BaseEventData)">
+            <summary>
+            On deselect.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnMove(UnityEngine.EventSystems.AxisEventData)">
+            <summary>
+            On move.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnSubmit(UnityEngine.EventSystems.BaseEventData)">
+            <summary>
+            On submit.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
+        </member>
+        <member name="M:MGS.UCommon.Event.MonoEventTrigger.OnCancel(UnityEngine.EventSystems.BaseEventData)">
+            <summary>
+            On cancel.
+            </summary>
+            <param name="eventData">Pointer event data.</param>
         </member>
         <member name="T:MGS.UCommon.Generic.ColorBlendMode">
             <summary>
@@ -372,9 +538,14 @@
             Base class for mono UI.
             </summary>
         </member>
-        <member name="P:MGS.UCommon.UI.MonoUI.rectTransform">
+        <member name="P:MGS.UCommon.UI.MonoUI.RectTrans">
             <summary>
             RectTransform component of UI.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.MonoUI.ParentTrans">
+            <summary>
+            RectTransform component of parent UI.
             </summary>
         </member>
         <member name="P:MGS.UCommon.UI.MonoUI.IsOpen">
@@ -399,12 +570,7 @@
         </member>
         <member name="M:MGS.UCommon.UI.MonoUI.Awake">
             <summary>
-            Awake UI.
-            </summary>
-        </member>
-        <member name="M:MGS.UCommon.UI.MonoUI.Initialize">
-            <summary>
-            Initialize UI.
+            Awake UI component.
             </summary>
         </member>
         <member name="M:MGS.UCommon.UI.MonoUI.OnDestroy">
@@ -412,18 +578,10 @@
             On destroy UI.
             </summary>
         </member>
-        <member name="M:MGS.UCommon.UI.MonoUI.Open(System.Object)">
+        <member name="M:MGS.UCommon.UI.MonoUI.Open">
             <summary>
             Open UI.
             </summary>
-            <param name="data">Data for UI.</param>
-        </member>
-        <member name="M:MGS.UCommon.UI.MonoUI.Refresh(System.Object)">
-            <summary>
-            Refresh UI.
-            </summary>
-            <param name="data">Data for UI.</param>
-            <returns>Succeed?</returns>
         </member>
         <member name="M:MGS.UCommon.UI.MonoUI.Close(System.Boolean)">
             <summary>
@@ -463,9 +621,14 @@
             Interface for mono UI.
             </summary>
         </member>
-        <member name="P:MGS.UCommon.UI.IMonoUI.rectTransform">
+        <member name="P:MGS.UCommon.UI.IMonoUI.RectTrans">
             <summary>
             RectTransform component of UI.
+            </summary>
+        </member>
+        <member name="P:MGS.UCommon.UI.IMonoUI.ParentTrans">
+            <summary>
+            RectTransform component of parent UI.
             </summary>
         </member>
         <member name="P:MGS.UCommon.UI.IMonoUI.IsOpen">
@@ -488,18 +651,10 @@
             Event on close UI.
             </summary>
         </member>
-        <member name="M:MGS.UCommon.UI.IMonoUI.Open(System.Object)">
+        <member name="M:MGS.UCommon.UI.IMonoUI.Open">
             <summary>
             Open UI.
             </summary>
-            <param name="data">Data for UI.</param>
-        </member>
-        <member name="M:MGS.UCommon.UI.IMonoUI.Refresh(System.Object)">
-            <summary>
-            Refresh UI.
-            </summary>
-            <param name="data">Data for UI.</param>
-            <returns>Succeed?</returns>
         </member>
         <member name="M:MGS.UCommon.UI.IMonoUI.Close(System.Boolean)">
             <summary>
@@ -1216,35 +1371,30 @@
             MonoBehaviour with a single instance.
             </summary>
         </member>
-        <member name="M:MGS.UCommon.DesignPattern.SingleBehaviour.SingleAwake">
-            <summary>
-            SingleBehaviour awake.
-            </summary>
-        </member>
         <member name="T:MGS.UCommon.DesignPattern.SingleMonoBehaviour`1">
             <summary>
             MonoBehaviour with a single instance.
             </summary>
             <typeparam name="T">Specified type.</typeparam>
         </member>
+        <member name="T:MGS.UCommon.DesignPattern.SingleMonoBehaviour`1.InnerSingleton">
+            <summary>
+            Inner singleton provide instance.
+            </summary>
+        </member>
+        <member name="F:MGS.UCommon.DesignPattern.SingleMonoBehaviour`1.InnerSingleton.Instance">
+            <summary>
+            Single instance of the specified type T.
+            </summary>
+        </member>
+        <member name="M:MGS.UCommon.DesignPattern.SingleMonoBehaviour`1.InnerSingleton.#cctor">
+            <summary>
+            Explicit static constructor to tell C# compiler not to mark type as beforefieldinit.
+            </summary>
+        </member>
         <member name="P:MGS.UCommon.DesignPattern.SingleMonoBehaviour`1.Instance">
             <summary>
-            Instance of this MonoBehaviour.
-            </summary>
-        </member>
-        <member name="F:MGS.UCommon.DesignPattern.SingleMonoBehaviour`1.instance">
-            <summary>
-            Instance of this MonoBehaviour.
-            </summary>
-        </member>
-        <member name="M:MGS.UCommon.DesignPattern.SingleMonoBehaviour`1.Awake">
-            <summary>
-            Component awake.
-            </summary>
-        </member>
-        <member name="M:MGS.UCommon.DesignPattern.SingleMonoBehaviour`1.SingleAwake">
-            <summary>
-            SingleMonoBehaviour awake.
+            Single instance of the specified type T.
             </summary>
         </member>
         <member name="T:MGS.UCommon.Skin.ISkin">
