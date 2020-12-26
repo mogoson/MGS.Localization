@@ -1,7 +1,7 @@
 ﻿==========================================================================
   Copyright © 2020 Mogoson. All rights reserved.
   Name: MGS-Internation
-  Author: Mogoson   Version: 1.0.0-preview1   Date: 12/27/2020
+  Author: Mogoson   Version: 1.0.0   Date: 12/27/2020
 ==========================================================================
   [Summary]
     International utility for project develop.
