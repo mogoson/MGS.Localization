@@ -1,10 +1,10 @@
 ﻿==========================================================================
-  Copyright © 2019 Mogoson. All rights reserved.
-  Name: MGS-Multilingualism
-  Author: Mogoson   Version: 1.0.0   Date: 8/10/2019
+  Copyright © 2020 Mogoson. All rights reserved.
+  Name: MGS-Internation
+  Author: Mogoson   Version: 1.0.0-preview1   Date: 12/27/2020
 ==========================================================================
   [Summary]
-    Multilingualism utility for project develop.
+    International utility for project develop.
 --------------------------------------------------------------------------
   [Environment]
     Unity 5.0 or above.
@@ -16,10 +16,10 @@
     Utility to get paragraph text in language by key.
 --------------------------------------------------------------------------
   [Demo]
-    Demos in the path "MGS-Multilingualism/Scenes" provide reference to you.
+    Demos in the path "MGS-Internation/Scenes" provide reference to you.
 --------------------------------------------------------------------------
   [Resource]
-    https://github.com/mogoson/MGS-Multilingualism.
+    https://github.com/mogoson/MGS-Internation.
 --------------------------------------------------------------------------
   [Contact]
     If you have any questions, feel free to contact me at mogoson@outlook.com.
