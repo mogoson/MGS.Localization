@@ -1,47 +1,47 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>MGS.Multilingualism</name>
+        <name>MGS.Internation</name>
     </assembly>
     <members>
-        <member name="T:MGS.Multilingualism.MultilingualUtility">
+        <member name="T:MGS.Internation.Internationalizer">
             <summary>
-            Utility for multilingualism.
+            Internationalizer.
             </summary>
         </member>
-        <member name="F:MGS.Multilingualism.MultilingualUtility.SEPARATOR">
+        <member name="F:MGS.Internation.Internationalizer.SEPARATOR">
             <summary>
             Separator of paragraph key and value.
             </summary>
         </member>
-        <member name="P:MGS.Multilingualism.MultilingualUtility.Current">
+        <member name="P:MGS.Internation.Internationalizer.Current">
             <summary>
             Current language name.
             </summary>
         </member>
-        <member name="F:MGS.Multilingualism.MultilingualUtility.current">
+        <member name="F:MGS.Internation.Internationalizer.current">
             <summary>
             Current language name.
             </summary>
         </member>
-        <member name="F:MGS.Multilingualism.MultilingualUtility.languages">
+        <member name="F:MGS.Internation.Internationalizer.languages">
             <summary>
             Languages paragraphs dictionary.
             </summary>
         </member>
-        <member name="M:MGS.Multilingualism.MultilingualUtility.#ctor">
+        <member name="M:MGS.Internation.Internationalizer.#ctor">
             <summary>
             Constructor.
             </summary>
         </member>
-        <member name="M:MGS.Multilingualism.MultilingualUtility.Deserialize(System.String)">
+        <member name="M:MGS.Internation.Internationalizer.Deserialize(System.String)">
             <summary>
             Deserialize language paragraphs from local file.
             </summary>
             <param name="languageFile">File path of language content.</param>
             <returns>Deserialize succeed?</returns>
         </member>
-        <member name="M:MGS.Multilingualism.MultilingualUtility.Deserialize(System.String,System.String[])">
+        <member name="M:MGS.Internation.Internationalizer.Deserialize(System.String,System.String[])">
             <summary>
             Deserialize language paragraphs from paragraph lines.
             </summary>
@@ -49,27 +49,27 @@
             <param name="paragraphLines">Paragraph lines of language.</param>
             <returns>Deserialize succeed?</returns>
         </member>
-        <member name="M:MGS.Multilingualism.MultilingualUtility.GetLanguages">
+        <member name="M:MGS.Internation.Internationalizer.GetLanguages">
             <summary>
             Get all deserialized languages.
             </summary>
             <returns>All deserialized languages.</returns>
         </member>
-        <member name="M:MGS.Multilingualism.MultilingualUtility.GetParagraphs(System.String)">
+        <member name="M:MGS.Internation.Internationalizer.GetParagraphs(System.String)">
             <summary>
             Get paragraphs of target language.
             </summary>
             <param name="language">Name of language.</param>
             <returns>Paragraphs of target language.</returns>
         </member>
-        <member name="M:MGS.Multilingualism.MultilingualUtility.GetParagraph(System.String)">
+        <member name="M:MGS.Internation.Internationalizer.GetParagraph(System.String)">
             <summary>
             Get a paragraph text of key in current language.
             </summary>
             <param name="key">Key of paragraph text.</param>
             <returns>A paragraph text of key in current language.</returns>
         </member>
-        <member name="M:MGS.Multilingualism.MultilingualUtility.GetParagraph(System.String,System.String)">
+        <member name="M:MGS.Internation.Internationalizer.GetParagraph(System.String,System.String)">
             <summary>
             Get a paragraph text of key in language.
             </summary>
@@ -77,7 +77,13 @@
             <param name="key">Key of paragraph text.</param>
             <returns>A paragraph text of key in language.</returns>
         </member>
-        <member name="M:MGS.Multilingualism.MultilingualUtility.ClearLanguages">
+        <member name="M:MGS.Internation.Internationalizer.ClearLanguage(System.String)">
+            <summary>
+            Clear paragraphs of language.
+            </summary>
+            <param name="language">Name of language.</param>
+        </member>
+        <member name="M:MGS.Internation.Internationalizer.ClearLanguages">
             <summary>
             Clear paragraphs of languages.
             </summary>

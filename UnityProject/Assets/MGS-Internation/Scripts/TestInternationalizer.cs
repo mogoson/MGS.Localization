@@ -1,8 +1,8 @@
 ﻿/*************************************************************************
  *  Copyright © 2019 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  TestMultilingualism.cs
- *  Description  :  Test multilingualism.
+ *  File         :  TestInternationalizer.cs
+ *  Description  :  Test Internationalizer.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -12,10 +12,10 @@
 
 using UnityEngine;
 
-namespace MGS.Multilingualism
+namespace MGS.Internation
 {
-    [AddComponentMenu("MGS/Multilingualism/TestMultilingualism")]
-    public class TestMultilingualism : MonoBehaviour
+    [AddComponentMenu("MGS/Internation/TestInternationalizer")]
+    public class TestInternationalizer : MonoBehaviour
     {
         #region Field and Property
         public float top = 10;
@@ -29,13 +29,17 @@ namespace MGS.Multilingualism
         #region Private Method
         private void Start()
         {
+            //Deserialize all languages just for example,
+            //if you do not need switch language frequently, you should only Deserialize a language in your project,
+            //when need switch to new language, you can ClearLanguage and Deserialize a new.
+
             foreach (var language in languages)
             {
-                var languageFile = Application.dataPath + "/Resources/Multilingualism/" + language + ".txt";
-                MultilingualUtility.Instance.Deserialize(languageFile);
+                var languageFile = Application.dataPath + "/Resources/Internation/" + language + ".txt";
+                Internationalizer.Instance.Deserialize(languageFile);
             }
 
-            helloWorldContent = MultilingualUtility.Instance.GetParagraph(languages[0], helloWorldKey);
+            helloWorldContent = Internationalizer.Instance.GetParagraph(languages[0], helloWorldKey);
         }
 
         private void OnGUI()
@@ -48,12 +52,12 @@ namespace MGS.Multilingualism
 
             if (GUILayout.Button(languages[0]))
             {
-                helloWorldContent = MultilingualUtility.Instance.GetParagraph(languages[0], helloWorldKey);
+                helloWorldContent = Internationalizer.Instance.GetParagraph(languages[0], helloWorldKey);
             }
 
             if (GUILayout.Button(languages[1]))
             {
-                helloWorldContent = MultilingualUtility.Instance.GetParagraph(languages[1], helloWorldKey);
+                helloWorldContent = Internationalizer.Instance.GetParagraph(languages[1], helloWorldKey);
             }
 
             GUILayout.EndHorizontal();
