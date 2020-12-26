@@ -1,7 +1,7 @@
-﻿# MGS-Multilingualism
+﻿# MGS-Internation
 
 ## Summary
-- Multilingualism utility for project develop.
+- International utility for project develop.
 
 ## Environment
 - Unity 5.0 or above.
@@ -12,12 +12,12 @@
 - Utility to get paragraph text in language by key.
 
 ## Demo
-- Demos in the path "MGS-Multilingualism/Scenes" provide reference to you.
+- Demos in the path "MGS-Internation/Scenes" provide reference to you.
 
 ## Preview
-- Test Multilingualism
+- Test Internationalizer
 
-![Test Multilingualism](./Attachment/README_Image/TestMultilingualism.gif)
+![Test Internationalizer](./Attachment/README_Image/TestInternationalizer.gif)
 
 ## Contact
 - If you have any questions, feel free to contact me at mogoson@outlook.com.
