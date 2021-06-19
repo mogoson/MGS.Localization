@@ -45,11 +45,9 @@ var paragraph = Internationalizer.Instance.GetParagraph(key);
 ## Demo
 - Demos in the path "MGS.Packages/Internation/Demo/" provide reference to you.
 
-## Preview
+## Source
 
-- Hello Word
-
-  ![Hello Word](./Attachment/images/TestInternationalizer.gif)
+- https://github.com/mogoson/MGS.Internation.
 
 ------
 
