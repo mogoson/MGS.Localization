@@ -4,6 +4,45 @@
         <name>MGS.DesignPattern</name>
     </assembly>
     <members>
+        <member name="T:MGS.DesignPattern.IResettable">
+            <summary>
+            Interface for resettable object.
+            </summary>
+        </member>
+        <member name="M:MGS.DesignPattern.IResettable.Reset">
+            <summary>
+            Reset object.
+            </summary>
+        </member>
+        <member name="T:MGS.DesignPattern.GenericPool`1">
+            <summary>
+            Generic object pool.
+            </summary>
+        </member>
+        <member name="M:MGS.DesignPattern.GenericPool`1.#ctor(System.Int32)">
+            <summary>
+            Constructor of GenericPool.
+            </summary>
+            <param name="maxCount">Max count limit of objects in pool.</param>
+        </member>
+        <member name="M:MGS.DesignPattern.GenericPool`1.Create">
+            <summary>
+            Create a new object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.DesignPattern.GenericPool`1.Reset(`0)">
+            <summary>
+            Reset this object.
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:MGS.DesignPattern.GenericPool`1.Dispose(`0)">
+            <summary>
+            Dispose this object.
+            </summary>
+            <param name="obj"></param>
+        </member>
         <member name="T:MGS.DesignPattern.ObjectPool`1">
             <summary>
             Generic object pool.
@@ -25,28 +64,10 @@
             Stack store objects.
             </summary>
         </member>
-        <member name="F:MGS.DesignPattern.ObjectPool`1.createFunc">
-            <summary>
-            Function of create new object.
-            </summary>
-        </member>
-        <member name="F:MGS.DesignPattern.ObjectPool`1.resetAction">
-            <summary>
-            Action of reset object to default.
-            </summary>
-        </member>
-        <member name="F:MGS.DesignPattern.ObjectPool`1.disposeAction">
-            <summary>
-            Action of dispose object.
-            </summary>
-        </member>
-        <member name="M:MGS.DesignPattern.ObjectPool`1.#ctor(System.Func{`0},System.Action{`0},System.Action{`0},System.Int32)">
+        <member name="M:MGS.DesignPattern.ObjectPool`1.#ctor(System.Int32)">
             <summary>
             Constructor of ObjectPool.
             </summary>
-            <param name="create">Function of create new object.</param>
-            <param name="reset">Action of reset object to default.</param>
-            <param name="dispose">Action of dispose object.</param>
             <param name="maxCount">Max count limit of objects in pool.</param>
         </member>
         <member name="M:MGS.DesignPattern.ObjectPool`1.Take">
@@ -66,6 +87,24 @@
             Clear all objects.
             </summary>
         </member>
+        <member name="M:MGS.DesignPattern.ObjectPool`1.Create">
+            <summary>
+            Create a new object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.DesignPattern.ObjectPool`1.Reset(`0)">
+            <summary>
+            Reset this object.
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:MGS.DesignPattern.ObjectPool`1.Dispose(`0)">
+            <summary>
+            Dispose this object.
+            </summary>
+            <param name="obj"></param>
+        </member>
         <member name="T:MGS.DesignPattern.SingleTimer`1">
             <summary>
             Provide a single instance with a timer to tick update for the specified type T;
@@ -76,7 +115,7 @@
         </member>
         <member name="P:MGS.DesignPattern.SingleTimer`1.Interval">
             <summary>
-            Interval of tick update.
+            Interval of tick update [ms].
             </summary>
         </member>
         <member name="P:MGS.DesignPattern.SingleTimer`1.Enabled">
@@ -109,24 +148,24 @@
             </summary>
             <typeparam name="T">Specified type.</typeparam>
         </member>
-        <member name="T:MGS.DesignPattern.Singleton`1.InnerSingleton">
+        <member name="P:MGS.DesignPattern.Singleton`1.Instance">
             <summary>
-            Inner singleton provide instance.
+            Single instance of the specified type T.
             </summary>
         </member>
-        <member name="F:MGS.DesignPattern.Singleton`1.InnerSingleton.Instance">
+        <member name="T:MGS.DesignPattern.Singleton`1.Agent">
+            <summary>
+            Agent provide the single instance.
+            </summary>
+        </member>
+        <member name="F:MGS.DesignPattern.Singleton`1.Agent.instance">
             <summary>
             Single instance of the specified type T created by that type's default constructor.
             </summary>
         </member>
-        <member name="M:MGS.DesignPattern.Singleton`1.InnerSingleton.#cctor">
+        <member name="M:MGS.DesignPattern.Singleton`1.Agent.#cctor">
             <summary>
             Explicit static constructor to tell C# compiler not to mark type as beforefieldinit.
-            </summary>
-        </member>
-        <member name="P:MGS.DesignPattern.Singleton`1.Instance">
-            <summary>
-            Single instance of the specified type T.
             </summary>
         </member>
     </members>

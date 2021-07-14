@@ -34,12 +34,15 @@ foreach (var filePath in languageFiles)
     Internationalizer.Instance.Deserialize(languageName, languageFile, Encoding.Default);
 }
 
-//Get paragraph by language name and key.
-var paragraph = Internationalizer.Instance.GetParagraph(languageName, key);
+//Get paragraph by key, language name is CultureInfo.CurrentCulture.Name.
+var paragraph = Internationalizer.Instance.GetParagraph(key);
 
 //Set current language name, get paragraph by key.
 Internationalizer.Instance.Current = languageName;
 var paragraph = Internationalizer.Instance.GetParagraph(key);
+
+//Get paragraph by language name and key.
+var paragraph = Internationalizer.Instance.GetParagraph(languageName, key);
 ```
 
 ## Demo

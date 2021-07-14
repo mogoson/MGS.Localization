@@ -22,7 +22,7 @@ namespace MGS.Internation
         public float top = 10;
         public float left = 10;
 
-        private readonly string[] languages = new string[] { "Simplified Chinese", "English" };
+        private readonly string[] languages = new string[] { "zh-CN", "en-US" };
         private const string INT_HW = "INT_HW";
         private string paragraph;
         #endregion
@@ -39,7 +39,6 @@ namespace MGS.Internation
                 var languageFile = string.Format("{0}/MGS.Packages/Internation/Demo/Language/{1}.txt", Application.dataPath, language);
                 Internationalizer.Instance.Deserialize(language, languageFile, Encoding.Default);
             }
-
             paragraph = Internationalizer.Instance.GetParagraph(languages[0], INT_HW);
         }
 

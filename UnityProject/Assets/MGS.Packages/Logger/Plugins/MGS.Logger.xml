@@ -108,6 +108,11 @@
             Loggers of utility.
             </summary>
         </member>
+        <member name="M:MGS.Logger.LogUtility.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
         <member name="M:MGS.Logger.LogUtility.Register(MGS.Logger.ILogger)">
             <summary>
             Register logger to utility.
@@ -145,6 +150,12 @@
             </summary>
             <param name="format">A composite format string.</param>
             <param name="args">Format arguments.</param>
+        </member>
+        <member name="M:MGS.Logger.LogUtility.LogException(System.Exception)">
+            <summary>
+            Logs a formatted exception message.
+            </summary>
+            <param name="ex">Instance of exception.</param>
         </member>
     </members>
 </doc>
