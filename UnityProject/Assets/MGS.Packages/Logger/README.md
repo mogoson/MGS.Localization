@@ -1,3 +1,5 @@
+[TOC]
+
 # MGS.Logger
 
 ## Summary
@@ -19,23 +21,18 @@
 
 ## Implemented
 
-### MGS.Logger.dll
+```C#
+public interface IFilter{}
 
-- ILogger: Interface of logger.
+public interface ILogger{}
 
-- LogUtility: provide unified entrance of log output.
-- FileLogger: provide a default logger that you can use to log to local file.
+public class FileLogger : ILogger{}
 
-### MGS.ULogger.dll
-
-- LogUtilityInitializer: Register a FileLogger to LogUtility.
-
-### MGS.ULoggerEditor.dll
-
-- UnityDebugger: Implemente ILogger base Unity Debug.
-- LogUtilityEditor: Register a UnityDebuggerto LogUtility.
+public sealed class LogUtility{}
+```
 
 ## Usage
+
 - Use LogUtility to output log content.
 
 ```C#
@@ -48,10 +45,28 @@ LogUtility.LogError("Log error is {0}", error);
 LogUtility.LogWarning("Log warning is {0}", warning);
 ```
 
+- Use log Filter.
+
+```C#
+//Implemente IFilter base your logic.
+public class Filter : IFilter
+{
+    public bool Select(string tag, string format, params object[] args)
+    {
+        //TODO: Decide whether to select this log.
+        return tag.Contains(FileLogger.TAG_ERROR);
+    }
+}
+
+//Register logger to LogUtility.
+var logDir = string.Format("{0}/Log/", Environment.CurrentDirectory);
+LogUtility.Register(new FileLogger(logDir, new Filter()));
+```
+
 - Override log path.
 
 ```c#
-//Delete MGS.ULogger.dll
+//Override the LogUtilityInitializer.Awake();
 //new a FileLogger with custom log file path;
 //Register the FileLogger to LogUtility.
 
@@ -62,7 +77,7 @@ LogUtility.Register(new FileLogger(logDir));
 - Override the Logger of LogUtility.
 
 ```C#
-//Delete MGS.ULogger.dll
+//Override the LogUtilityInitializer.Awake();
 //Implemente a CustomLogger;
 //Register the CustomLogger to LogUtility.
 
@@ -70,17 +85,17 @@ public class CustomLogger : ILogger
 {
   public void Log(string format, params object[] args)
   {
-    //Implemente the logic.
+    //TODO: Implemente the logic.
   }
 
   public void LogError(string format, params object[] args)
   {
-    //Implemente the logic.
+    //TODO: Implemente the logic.
   }
 
   public void LogWarning(string format, params object[] args)
   {
-    //Implemente the logic.
+    //TODO: Implemente the logic.
   }
 }
 
@@ -90,7 +105,7 @@ LogUtility.Register(new CustomLogger());
 
 ## Demo
 
-- Demos in the path "MGS.Logger/Scenes" provide reference to you.
+- Demos in the path "MGS.Packages/Logger/Demo/" provide reference to you.
 
 ## Source
 

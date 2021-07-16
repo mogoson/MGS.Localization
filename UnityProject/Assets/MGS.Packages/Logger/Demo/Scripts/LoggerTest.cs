@@ -14,12 +14,13 @@ using UnityEngine;
 
 namespace MGS.Logger
 {
+    [AddComponentMenu("MGS/Demo/LoggerTest")]
     public class LoggerTest : MonoBehaviour
     {
         #region Private Method
         private void Awake()
         {
-            //This log can not output before Unity5.3, see LogUtilityInitializer.Awake to learn more.
+            //This log can not output to the default logger before Unity5.3, see LogUtilityInitializer.Awake to learn more.
             LogUtility.Log("LoggerTest Awake");
         }
 

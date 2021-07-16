@@ -13,9 +13,8 @@
 using System.Text;
 using UnityEngine;
 
-namespace MGS.Internation
+namespace MGS.Internation.Demo
 {
-    [AddComponentMenu("MGS/Internation/TestInternationalizer")]
     public class TestInternationalizer : MonoBehaviour
     {
         #region Field and Property
