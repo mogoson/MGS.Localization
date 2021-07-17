@@ -12,9 +12,8 @@
 
 using UnityEngine;
 
-namespace MGS.Logger
+namespace MGS.Logger.Demo
 {
-    [AddComponentMenu("MGS/Demo/LoggerTest")]
     public class LoggerTest : MonoBehaviour
     {
         #region Private Method
