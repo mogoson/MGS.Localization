@@ -48,12 +48,12 @@ public class GenericPool<T> : ObjectPool<T> where T : IResettable, new()
 public abstract class Singleton<T> where T : class{}
 
 /// <summary>
-/// Provide a single instance with a timer to tick update for the specified type T;
+/// Provide a single instance to update for the specified type T;
 /// Inheritance class should with the sealed access modifier
 /// and a private parameterless constructor to ensure singleton.
 /// </summary>
 /// <typeparam name="T">Specified type.</typeparam>
-public abstract class SingleTimer<T> : Singleton<T> where T : class{}
+public abstract class SingleUpdater<T> : Singleton<T> where T : class
 ```
 
 ## Usage
@@ -106,6 +106,19 @@ public sealed class TestSingleton : Singleton<TestSingleton>
 
 //Use Instance to accessing fields, properties and methods. 
 var testInfo = TestSingleton.Instance.testField;
+
+
+//Custom classs with a single instance to update.
+public sealed class TestSingleUpdater : SingleUpdater<TestSingleUpdater>
+{
+    //Private parameterless constructor to ensure singleton.
+    private TestSingleUpdater() { }
+
+    protected override void Update(DateTime signalTime)
+    {
+        //TODO: do something on update.
+    }
+}
 ```
 
 ------

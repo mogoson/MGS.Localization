@@ -105,40 +105,39 @@
             </summary>
             <param name="obj"></param>
         </member>
-        <member name="T:MGS.DesignPattern.SingleTimer`1">
+        <member name="T:MGS.DesignPattern.SingleUpdater`1">
             <summary>
-            Provide a single instance with a timer to tick update for the specified type T;
+            Provide a single instance to update for the specified type T;
             Inheritance class should with the sealed access modifier
             and a private parameterless constructor to ensure singleton.
             </summary>
             <typeparam name="T">Specified type.</typeparam>
         </member>
-        <member name="P:MGS.DesignPattern.SingleTimer`1.Interval">
+        <member name="P:MGS.DesignPattern.SingleUpdater`1.Interval">
             <summary>
-            Interval of tick update [ms].
+            Interval of update [ms].
             </summary>
         </member>
-        <member name="P:MGS.DesignPattern.SingleTimer`1.Enabled">
+        <member name="P:MGS.DesignPattern.SingleUpdater`1.Enabled">
             <summary>
-            Enabled of tick update.
+            Enabled of update.
             </summary>
         </member>
-        <member name="P:MGS.DesignPattern.SingleTimer`1.Timer">
+        <member name="P:MGS.DesignPattern.SingleUpdater`1.Timer">
             <summary>
-            The timer to tick update.
+            The timer to update.
             </summary>
         </member>
-        <member name="M:MGS.DesignPattern.SingleTimer`1.#ctor">
+        <member name="M:MGS.DesignPattern.SingleUpdater`1.#ctor">
             <summary>
             Constructor.
             </summary>
         </member>
-        <member name="M:MGS.DesignPattern.SingleTimer`1.Tick(System.Object,System.Timers.ElapsedEventArgs)">
+        <member name="M:MGS.DesignPattern.SingleUpdater`1.Update(System.DateTime)">
             <summary>
-            Timer tick.
+            On update event.
             </summary>
-            <param name="sender">Event sender.</param>
-            <param name="e">Event args.</param>
+            <param name="signalTime">Signal time.</param>
         </member>
         <member name="T:MGS.DesignPattern.Singleton`1">
             <summary>
