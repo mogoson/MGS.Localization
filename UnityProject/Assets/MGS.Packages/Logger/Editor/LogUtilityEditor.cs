@@ -12,14 +12,13 @@
 
 using UnityEngine;
 
-namespace MGS.Logger
+namespace MGS.Logger.UEditor
 {
     /// <summary>
     /// Editor for log utility.
     /// </summary>
     public sealed class LogUtilityEditor
     {
-        #region Public Method
         /// <summary>
         /// Awake editor.
         /// </summary>
@@ -32,6 +31,5 @@ namespace MGS.Logger
         {
             LogUtility.Register(new UnityDebugger());
         }
-        #endregion
     }
 }

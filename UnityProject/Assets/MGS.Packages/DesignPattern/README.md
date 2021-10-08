@@ -1,24 +1,19 @@
 [TOC]
 
-﻿# MGS.DesignPattern.dll
+# MGS.DesignPattern
 
 ## Summary
-
 - Design pattern code for C# project develop.
 - Design pattern code for Unity project develop.
 
 ## Environment
-
-- .Net Framework 3.5 or above.
 - Unity 5.0 or above.
+- .Net Framework 3.5 or above.
 
-## Dependence
-
-- System.dll
-- UnityEngine.dll
+## Platform
+- Windows.
 
 ## Demand
-
 - Provide a single instance of the specified type T.
 - Generic object pool.
 - Provide a single instance of the specified MonoBehaviour.
@@ -179,9 +174,11 @@ SingleBehaviour.Instance.OnApplicationQuitEvent += () =>
 };
 ```
 
-------
+## Demo
+- Demos in the path "MGS.Packages/DesignPattern/Demo/" provide reference to you.
 
-[Previous](../../README.md)
+## Source
+- https://github.com/mogoson/MGS.DesignPattern.
 
 ------
 

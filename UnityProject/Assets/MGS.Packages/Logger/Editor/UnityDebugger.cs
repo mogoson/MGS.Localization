@@ -12,14 +12,13 @@
 
 using UnityEngine;
 
-namespace MGS.Logger
+namespace MGS.Logger.UEditor
 {
     /// <summary>
     /// Debugger for unity editor.
     /// </summary>
     public class UnityDebugger : Logger.ILogger
     {
-        #region Public Method
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -54,6 +53,5 @@ namespace MGS.Logger
         {
             Debug.LogWarningFormat(format, args);
         }
-        #endregion
     }
 }

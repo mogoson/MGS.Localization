@@ -43,6 +43,108 @@
             </summary>
             <param name="obj"></param>
         </member>
+        <member name="T:MGS.DesignPattern.GOPool">
+            <summary>
+            Pool of gameobject.
+            </summary>
+        </member>
+        <member name="P:MGS.DesignPattern.GOPool.Node">
+            <summary>
+            Parent of gameobjects.
+            </summary>
+        </member>
+        <member name="F:MGS.DesignPattern.GOPool.prefab">
+            <summary>
+            Prefab to create clone.
+            </summary>
+        </member>
+        <member name="M:MGS.DesignPattern.GOPool.#ctor(UnityEngine.Transform,UnityEngine.GameObject,System.Int32)">
+            <summary>
+            Create and initialize GameObjectPool.
+            </summary>
+            <param name="node">Parent of gameobjects.</param>
+            <param name="prefab">Prefab to create clone.</param>
+            <param name="maxCount">Max count limit of gameobjects in pool.</param>
+        </member>
+        <member name="M:MGS.DesignPattern.GOPool.Take">
+            <summary>
+            Take a gameobject from pool.
+            </summary>
+            <returns>A gameobject.</returns>
+        </member>
+        <member name="M:MGS.DesignPattern.GOPool.Take``1">
+            <summary>
+            Take a gameobject from pool and get the specified component.
+            </summary>
+            <typeparam name="T">Specified type of component.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.DesignPattern.GOPool.Recycle(UnityEngine.Component)">
+            <summary>
+            Recycle the game object of component to pool.
+            </summary>
+            <param name="cpnt">Instance of component.</param>
+        </member>
+        <member name="M:MGS.DesignPattern.GOPool.Create">
+            <summary>
+            Create new gameobject.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.DesignPattern.GOPool.Reset(UnityEngine.GameObject)">
+            <summary>
+            Reset the gameobject.
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:MGS.DesignPattern.GOPool.Dispose(UnityEngine.GameObject)">
+            <summary>
+            Dispose the gameobject.
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="T:MGS.DesignPattern.GOPoolManager">
+            <summary>
+            Manager of gameobject pool.
+            </summary>
+        </member>
+        <member name="F:MGS.DesignPattern.GOPoolManager.poolsInfo">
+            <summary>
+            Dictionary store pools info(name and pool).
+            </summary>
+        </member>
+        <member name="F:MGS.DesignPattern.GOPoolManager.poolRoot">
+            <summary>
+            Root transform for pools.
+            </summary>
+        </member>
+        <member name="M:MGS.DesignPattern.GOPoolManager.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:MGS.DesignPattern.GOPoolManager.CreatePool(System.String,UnityEngine.GameObject,System.Int32)">
+            <summary>
+            Create a pool in this manager.
+            </summary>
+            <param name="name">Name of GameObjectPool.</param>
+            <param name="prefab">Prefab of GameObjectPool.</param>
+            <param name="maxCount">Max count limit of gameobjects in pool.</param>
+            <returns>Pool created base on parameters.</returns>
+        </member>
+        <member name="M:MGS.DesignPattern.GOPoolManager.FindPool(System.String)">
+            <summary>
+            Find GameObjectPool by name.
+            </summary>
+            <param name="name">Name of GameObjectPool.</param>
+            <returns>Name match GameObjectPool.</returns>
+        </member>
+        <member name="M:MGS.DesignPattern.GOPoolManager.DeletePool(System.String)">
+            <summary>
+            Delete GameObjectPool by name.
+            </summary>
+            <param name="name">Name of GameObjectPool.</param>
+        </member>
         <member name="T:MGS.DesignPattern.ObjectPool`1">
             <summary>
             Generic object pool.
@@ -105,6 +207,70 @@
             </summary>
             <param name="obj"></param>
         </member>
+        <member name="T:MGS.DesignPattern.SingleBehaviour">
+            <summary>
+            Generic single behaviour.
+            Auto create the generic instance, do not add this component to any GameObject by yourself.
+            </summary>
+        </member>
+        <member name="E:MGS.DesignPattern.SingleBehaviour.OnApplicationFocusEvent">
+            <summary>
+            Event on application focus.
+            </summary>
+        </member>
+        <member name="E:MGS.DesignPattern.SingleBehaviour.OnApplicationPauseEvent">
+            <summary>
+            Event on application pause.
+            </summary>
+        </member>
+        <member name="E:MGS.DesignPattern.SingleBehaviour.OnApplicationQuitEvent">
+            <summary>
+            Event on application quit.
+            </summary>
+        </member>
+        <member name="M:MGS.DesignPattern.SingleBehaviour.OnApplicationFocus(System.Boolean)">
+            <summary>
+            On application focus.
+            </summary>
+            <param name="hasFocus"></param>
+        </member>
+        <member name="M:MGS.DesignPattern.SingleBehaviour.OnApplicationPause(System.Boolean)">
+            <summary>
+            On application pause.
+            </summary>
+            <param name="pauseStatus"></param>
+        </member>
+        <member name="M:MGS.DesignPattern.SingleBehaviour.OnApplicationQuit">
+            <summary>
+            On application quit.
+            </summary>
+        </member>
+        <member name="T:MGS.DesignPattern.SingleComponent`1">
+            <summary>
+            Generic base class for single Component.
+            Inheritance class should with the sealed access modifier to ensure distinct singleton.
+            </summary>
+        </member>
+        <member name="P:MGS.DesignPattern.SingleComponent`1.Instance">
+            <summary>
+            Single instance of the specified Component T.
+            </summary>
+        </member>
+        <member name="T:MGS.DesignPattern.SingleComponent`1.Agent">
+            <summary>
+            Agent provide the single instance.
+            </summary>
+        </member>
+        <member name="F:MGS.DesignPattern.SingleComponent`1.Agent.instance">
+            <summary>
+            Single instance of the specified Component T.
+            </summary>
+        </member>
+        <member name="M:MGS.DesignPattern.SingleComponent`1.Agent.#cctor">
+            <summary>
+            Explicit static constructor to tell C# compiler not to mark type as beforefieldinit.
+            </summary>
+        </member>
         <member name="T:MGS.DesignPattern.SingleUpdater`1">
             <summary>
             Provide a single instance to update for the specified type T;
@@ -123,9 +289,9 @@
             Enabled of update.
             </summary>
         </member>
-        <member name="P:MGS.DesignPattern.SingleUpdater`1.Timer">
+        <member name="F:MGS.DesignPattern.SingleUpdater`1.thread">
             <summary>
-            The timer to update.
+            The thread to update.
             </summary>
         </member>
         <member name="M:MGS.DesignPattern.SingleUpdater`1.#ctor">
@@ -133,11 +299,15 @@
             Constructor.
             </summary>
         </member>
-        <member name="M:MGS.DesignPattern.SingleUpdater`1.Update(System.DateTime)">
+        <member name="M:MGS.DesignPattern.SingleUpdater`1.Start">
             <summary>
-            On update event.
+            On thread start event.
             </summary>
-            <param name="signalTime">Signal time.</param>
+        </member>
+        <member name="M:MGS.DesignPattern.SingleUpdater`1.Update">
+            <summary>
+            On thread update event.
+            </summary>
         </member>
         <member name="T:MGS.DesignPattern.Singleton`1">
             <summary>

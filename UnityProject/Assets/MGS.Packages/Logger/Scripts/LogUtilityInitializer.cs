@@ -10,6 +10,7 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using System;
 using UnityEngine;
 
 namespace MGS.Logger
@@ -19,7 +20,11 @@ namespace MGS.Logger
     /// </summary>
     public sealed class LogUtilityInitializer
     {
-        #region Public Method
+        /// <summary>
+        /// Key of last time clear log.
+        /// </summary>
+        private const string KEY_LAST_TIME_CLEAR_LOG = "KEY_LAST_TIME_CLEAR_LOG";
+
         /// <summary>
         /// Awake initializer.
         /// </summary>
@@ -32,8 +37,28 @@ namespace MGS.Logger
         {
             //Use persistentDataPath support more platforms, example Android.
             var logDir = string.Format("{0}/Log/", Application.persistentDataPath);
-            LogUtility.Register(new FileLogger(logDir));
+            var logger = new FileLogger(logDir);
+
+            //Clear log files if out of 60 days.
+            var lastRecord = PlayerPrefs.GetString(KEY_LAST_TIME_CLEAR_LOG);
+            var lastClearTime = DateTime.Now;
+            if (DateTime.TryParse(lastRecord, out lastClearTime))
+            {
+                if ((lastClearTime - DateTime.Now).Days > 60)
+                {
+                    logger.ClearLogFile(10);
+                    PlayerPrefs.SetString(KEY_LAST_TIME_CLEAR_LOG, DateTime.Now.ToString());
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetString(KEY_LAST_TIME_CLEAR_LOG, DateTime.Now.ToString());
+            }
+
+            LogUtility.Register(logger);
+#if UNITY_EDITOR
+            Debug.LogFormat("Register file logger to the directory {0}", logDir);
+#endif
         }
-        #endregion
     }
 }

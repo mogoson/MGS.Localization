@@ -9,6 +9,11 @@
             Loggger for log to local file.
             </summary>
         </member>
+        <member name="F:MGS.Logger.FileLogger.FILE_EXTENSION">
+            <summary>
+            Extension of log file.
+            </summary>
+        </member>
         <member name="F:MGS.Logger.FileLogger.TAG_LOG">
             <summary>
             The tag of log message.
@@ -58,6 +63,19 @@
             <param name="args">Format arguments.</param>
             <returns>The log content.</returns>
         </member>
+        <member name="M:MGS.Logger.FileLogger.AppendToFile(System.String,System.String)">
+            <summary>
+            Append content to file at path.
+            </summary>
+            <param name="filePath"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:MGS.Logger.FileLogger.DeleteFile(System.String)">
+            <summary>
+            Delete file at path.
+            </summary>
+            <param name="filePath"></param>
+        </member>
         <member name="M:MGS.Logger.FileLogger.#ctor(System.String,MGS.Logger.IFilter)">
             <summary>
             Constructor.
@@ -85,6 +103,18 @@
             </summary>
             <param name="format">A composite format string.</param>
             <param name="args">Format arguments.</param>
+        </member>
+        <member name="M:MGS.Logger.FileLogger.ClearLogFile(System.Int32)">
+            <summary>
+            Clear log file reserve recent specific count.
+            </summary>
+            <param name="reserve"></param>
+        </member>
+        <member name="M:MGS.Logger.FileLogger.ClearLogFile(System.DateTime)">
+            <summary>
+            Clear log file before specific date time.
+            </summary>
+            <param name="before"></param>
         </member>
         <member name="T:MGS.Logger.IFilter">
             <summary>

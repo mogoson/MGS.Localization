@@ -6,14 +6,16 @@
 - Logger for C# project develop.
 - Logger for Unity project.
 
+## Platform
+
+- Windows
+- Android
+
 ## Environment
 
 - Unity 5.0 or above.
 
 - .Net Framework 3.5 or above.
-
-## Platform
-- Windows
 
 ## Demand
 - Output log to local file.
@@ -43,6 +45,28 @@ public sealed class LogUtility{}
 LogUtility.Log("Log info is {0}", info);
 LogUtility.LogError("Log error is {0}", error);
 LogUtility.LogWarning("Log warning is {0}", warning);
+```
+
+- Wrap LogUtility specifically.
+
+```C#
+public sealed class Logger
+{
+    // A good way to use the LogUtility is wrap it specifically.
+    // Example: add module prefix identification and more infos.
+
+    public static void Log(string format, params object[] args)
+    {
+        LogUtility.Log(AddPrefix(format), args);
+    }
+    
+    private static string AddPrefix(string origin)
+    {
+        return "[Demo] " + origin;
+    }
+}
+
+Logger.Log("Log info is {0}", info);
 ```
 
 - Use log Filter.
