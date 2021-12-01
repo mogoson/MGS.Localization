@@ -1,7 +1,7 @@
 # MGS.Localization
 
 ## Summary
-- International utility for project develop.
+- Localization utility for project develop.
 
 ## Environment
 - Unity 5.0 or above.
@@ -45,11 +45,9 @@ var paragraph = Localizer.Instance.GetParagraph(languageName, key);
 ## Demo
 - Demos in the path "MGS.Packages/Localization/Demo/" provide reference to you.
 
-## Preview
+## Source
 
-- Hello Word
-
-  ![Hello Word](./Attachment/images/TestInternationalizer.gif)
+- https://github.com/mogoson/MGS.Localization.
 
 ------
 

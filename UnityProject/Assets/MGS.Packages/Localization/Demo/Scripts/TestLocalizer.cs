@@ -1,21 +1,21 @@
 ﻿/*************************************************************************
- *  Copyright © 2019 Mogoson. All rights reserved.
+ *  Copyright © 2021 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  TestInternationalizer.cs
- *  Description  :  Test Internationalizer.
+ *  File         :  TestLocalizer.cs
+ *  Description  :  Test Localizer.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
- *  Date         :  6/7/2019
+ *  Date         :  6/7/2021
  *  Description  :  Initial development version.
  *************************************************************************/
 
 using System.Text;
 using UnityEngine;
 
-namespace MGS.Internation.Demo
+namespace MGS.Localization.Demo
 {
-    public class TestInternationalizer : MonoBehaviour
+    public class TestLocalizer : MonoBehaviour
     {
         #region Field and Property
         public float top = 10;
@@ -35,10 +35,10 @@ namespace MGS.Internation.Demo
 
             foreach (var language in languages)
             {
-                var languageFile = string.Format("{0}/MGS.Packages/Internation/Demo/Language/{1}.txt", Application.dataPath, language);
-                Internationalizer.Instance.Deserialize(language, languageFile, Encoding.Default);
+                var languageFile = string.Format("{0}/MGS.Packages/Localization/Demo/Language/{1}.txt", Application.dataPath, language);
+                Localizer.Instance.Deserialize(language, languageFile, Encoding.Default);
             }
-            paragraph = Internationalizer.Instance.GetParagraph(languages[0], INT_HW);
+            paragraph = Localizer.Instance.GetParagraph(languages[0], INT_HW);
         }
 
         private void OnGUI()
@@ -51,12 +51,12 @@ namespace MGS.Internation.Demo
 
             if (GUILayout.Button(languages[0]))
             {
-                paragraph = Internationalizer.Instance.GetParagraph(languages[0], INT_HW);
+                paragraph = Localizer.Instance.GetParagraph(languages[0], INT_HW);
             }
 
             if (GUILayout.Button(languages[1]))
             {
-                paragraph = Internationalizer.Instance.GetParagraph(languages[1], INT_HW);
+                paragraph = Localizer.Instance.GetParagraph(languages[1], INT_HW);
             }
 
             GUILayout.EndHorizontal();
