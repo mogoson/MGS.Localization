@@ -1,7 +1,7 @@
 # MGS.Localization
 
 ## Summary
-- International utility for project develop.
+- Localization utility for project develop.
 
 ## Environment
 - Unity 5.0 or above.
