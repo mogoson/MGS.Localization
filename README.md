@@ -28,18 +28,18 @@ INT_HW=Hello World
 //Deserialize language files to Localizer.
 foreach (var filePath in languageFiles)
 {
-    Localizer.Instance.Deserialize(languageName, languageFile, Encoding.Default);
+    LocalizationAPI.Handler.Deserialize(languageName, languageFile, Encoding.Default);
 }
 
 //Get paragraph by key, language name is CultureInfo.CurrentCulture.Name.
-var paragraph = Localizer.Instance.GetParagraph(key);
+var paragraph = LocalizationAPI.Handler.GetParagraph(key);
 
 //Set current language name, get paragraph by key.
-Localizer.Instance.Current = languageName;
-var paragraph = Localizer.Instance.GetParagraph(key);
+LocalizationAPI.Handler.Current = languageName;
+var paragraph = LocalizationAPI.Handler.GetParagraph(key);
 
 //Get paragraph by language name and key.
-var paragraph = Localizer.Instance.GetParagraph(languageName, key);
+var paragraph = LocalizationAPI.Handler.GetParagraph(languageName, key);
 ```
 
 ## Demo
