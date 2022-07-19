@@ -1,8 +1,8 @@
 ﻿/*************************************************************************
  *  Copyright © 2021 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  TestLocalizer.cs
- *  Description  :  Test Localizer.
+ *  File         :  TestLocalization.cs
+ *  Description  :  Test localization.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -15,7 +15,7 @@ using UnityEngine;
 
 namespace MGS.Localization.Demo
 {
-    public class TestLocalizer : MonoBehaviour
+    public class TestLocalization : MonoBehaviour
     {
         #region Field and Property
         public float top = 10;
@@ -31,14 +31,14 @@ namespace MGS.Localization.Demo
         {
             //Deserialize all languages just for example,
             //if you do not need switch language frequently, you should only Deserialize a language in your project,
-            //when need switch to new language, you can ClearLanguage and Deserialize a new.
+            //when need switch to new language, you can Clear language and Deserialize a new.
 
             foreach (var language in languages)
             {
                 var languageFile = string.Format("{0}/MGS.Packages/Localization/Demo/Language/{1}.txt", Application.dataPath, language);
-                Localizer.Instance.Deserialize(language, languageFile, Encoding.Default);
+                LocalizationAPI.Handler.Deserialize(language, languageFile, Encoding.Default);
             }
-            paragraph = Localizer.Instance.GetParagraph(languages[0], INT_HW);
+            paragraph = LocalizationAPI.Handler.GetParagraph(languages[0], INT_HW);
         }
 
         private void OnGUI()
@@ -51,12 +51,12 @@ namespace MGS.Localization.Demo
 
             if (GUILayout.Button(languages[0]))
             {
-                paragraph = Localizer.Instance.GetParagraph(languages[0], INT_HW);
+                paragraph = LocalizationAPI.Handler.GetParagraph(languages[0], INT_HW);
             }
 
             if (GUILayout.Button(languages[1]))
             {
-                paragraph = Localizer.Instance.GetParagraph(languages[1], INT_HW);
+                paragraph = LocalizationAPI.Handler.GetParagraph(languages[1], INT_HW);
             }
 
             GUILayout.EndHorizontal();

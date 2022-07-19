@@ -19,22 +19,10 @@ using System.Text;
 namespace MGS.Localization
 {
     /// <summary>
-    /// Localizer (Singleton, Lazy, Thread safety).
+    /// Localizer.
     /// </summary>
-    public sealed class Localizer
+    public class Localizer : ILocalization
     {
-        #region Singleton
-        /// <summary>
-        /// Instance of processor (Lazy).
-        /// </summary>
-        public static Localizer Instance { get { return Agent.instance; } }
-
-        /// <summary>
-        /// Agent provide the single instance (Thread safety).
-        /// </summary>
-        private class Agent { internal static readonly Localizer instance = new Localizer(); }
-        #endregion
-
         #region Field and Property
         /// <summary>
         /// Separator of paragraph key and value.
@@ -68,31 +56,31 @@ namespace MGS.Localization
         /// <summary>
         /// Languages paragraphs dictionary.
         /// </summary>
-        private Dictionary<string, Dictionary<string, string>> languages = null;
+        protected Dictionary<string, Dictionary<string, string>> languages = null;
         #endregion
 
-        #region Private Method
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        private Localizer()
-        {
-            current = CultureInfo.CurrentCulture.Name;
-            languages = new Dictionary<string, Dictionary<string, string>>();
-        }
-
+        #region Protected Method
         /// <summary>
         /// Log error.
         /// </summary>
         /// <param name="format"></param>
         /// <param name="args"></param>
-        private void LogError(string format, params object[] args)
+        protected void LogError(string format, params object[] args)
         {
             UnityEngine.Debug.LogErrorFormat(format, args);
         }
         #endregion
 
         #region Public Method
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public Localizer()
+        {
+            current = CultureInfo.CurrentCulture.Name;
+            languages = new Dictionary<string, Dictionary<string, string>>();
+        }
+
         /// <summary>
         /// Deserialize language paragraphs from local file.
         /// </summary>
@@ -186,7 +174,7 @@ namespace MGS.Localization
         /// Get all deserialized languages.
         /// </summary>
         /// <returns>All deserialized languages.</returns>
-        public string[] GetLanguages()
+        public ICollection<string> GetLanguages()
         {
             var languageArray = new string[languages.Keys.Count];
             languages.Keys.CopyTo(languageArray, 0);
@@ -198,7 +186,7 @@ namespace MGS.Localization
         /// </summary>
         /// <param name="language">Name of language.</param>
         /// <returns>Paragraphs of target language.</returns>
-        public Dictionary<string, string> GetParagraphs(string language)
+        public IDictionary<string, string> GetParagraphs(string language)
         {
             if (!languages.ContainsKey(language))
             {
@@ -252,7 +240,7 @@ namespace MGS.Localization
         /// Clear paragraphs of language.
         /// </summary>
         /// <param name="language">Name of language.</param>
-        public void ClearLanguage(string language)
+        public void Clear(string language)
         {
             if (languages.ContainsKey(language))
             {
@@ -268,10 +256,19 @@ namespace MGS.Localization
         /// <summary>
         /// Clear paragraphs of languages.
         /// </summary>
-        public void ClearLanguages()
+        public void Clear()
         {
             languages.Clear();
             current = string.Empty;
+        }
+
+        /// <summary>
+        /// Dispose all resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Clear();
+            languages = null;
         }
         #endregion
     }
