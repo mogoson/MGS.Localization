@@ -36,7 +36,7 @@ namespace MGS.Localization.Demo
             foreach (var language in languages)
             {
                 var languageFile = string.Format("{0}/MGS.Packages/Localization/Demo/Language/{1}.txt", Application.dataPath, language);
-                LocalizationAPI.Handler.Deserialize(language, languageFile, Encoding.Default);
+                LocalizationAPI.Handler.Deserialize(language, languageFile, Encoding.UTF8);
             }
             paragraph = LocalizationAPI.Handler.GetParagraph(languages[0], INT_HW);
         }
