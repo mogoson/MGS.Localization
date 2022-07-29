@@ -51,7 +51,7 @@ var paragraph = LocalizationAPI.Handler.GetParagraph(languWageName, key);
 
 ## Source
 
-- https://github.com/mogoson/MGS.Localization.W
+- https://github.com/mogoson/MGS.Localization
 
 ------
 
