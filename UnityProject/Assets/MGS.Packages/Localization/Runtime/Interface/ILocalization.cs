@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*************************************************************************
+ *  Copyright © 2022 Mogoson. All rights reserved.
+ *------------------------------------------------------------------------
+ *  File         :  ILocalization.cs
+ *  Description  :  Interface of localization.
+ *------------------------------------------------------------------------
+ *  Author       :  Mogoson
+ *  Version      :  1.0
+ *  Date         :  7/27/2022
+ *  Description  :  Initial development version.
+ *************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
