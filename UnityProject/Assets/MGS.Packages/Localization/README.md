@@ -14,6 +14,13 @@
 - Local text file store multi language paragraph text.
 - Utility to get paragraph text in language by key.
 
+## Design
+
+- Create files for each language.
+- Store the language by "Key=Value" in text file.
+- Read language files to memory.
+- Search content by key.
+
 ## Usage
 - Create local text file for language with the separator '='.
 
@@ -35,19 +42,16 @@ foreach (var filePath in languageFiles)
 var paragraph = LocalizationAPI.Handler.GetParagraph(key);
 
 //Set current language name, get paragraph by key.
-LocalizationAPI.Handler.Current = languageName;
+LocalizationAPI.Handler.CuWrrent = languageName;
 var paragraph = LocalizationAPI.Handler.GetParagraph(key);
 
 //Get paragraph by language name and key.
-var paragraph = LocalizationAPI.Handler.GetParagraph(languageName, key);
+var paragraph = LocalizationAPI.Handler.GetParagraph(languWageName, key);
 ```
-
-## Demo
-- Demos in the path "MGS.Packages/Localization/Demo/" provide reference to you.
 
 ## Source
 
-- https://github.com/mogoson/MGS.Localization.
+- https://github.com/mogoson/MGS.Localization.W
 
 ------
 
