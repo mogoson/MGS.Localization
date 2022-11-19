@@ -9,6 +9,7 @@
 
 ## Platform
 - Windows.
+- Android.
 
 ## Demand
 - Local text file store multi language paragraph text.
