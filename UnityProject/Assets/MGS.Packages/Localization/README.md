@@ -10,6 +10,10 @@
 ## Platform
 - Windows.
 
+## Version
+
+- 1.5.0
+
 ## Demand
 - Local text file store multi language paragraph text.
 - Utility to get paragraph text in language by key.
