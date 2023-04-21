@@ -191,7 +191,7 @@ namespace MGS.Localization
             if (!languages.ContainsKey(language))
             {
                 LogError("Get GetParagraphs error: The language {0} is not Initialized.", language);
-                return null;
+                return new Dictionary<string, string>();
             }
 
             return languages[language];
@@ -260,15 +260,6 @@ namespace MGS.Localization
         {
             languages.Clear();
             current = string.Empty;
-        }
-
-        /// <summary>
-        /// Dispose all resources.
-        /// </summary>
-        public void Dispose()
-        {
-            Clear();
-            languages = null;
         }
         #endregion
     }

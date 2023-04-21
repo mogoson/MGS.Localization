@@ -10,7 +10,6 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -19,7 +18,7 @@ namespace MGS.Localization
     /// <summary>
     /// Interface of localizer.
     /// </summary>
-    public interface ILocalizer : IDisposable
+    public interface ILocalizer
     {
         /// <summary>
         /// Current language name.
