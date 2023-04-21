@@ -332,3 +332,9 @@ ASALocalRun/
 /UnityProject/*.csproj
 /UnityProject/*.sln
 /UnityProject/*.csproj
+/Temp
+/Library
+/Logs
+/obj
+/*.csproj
+/*.sln
