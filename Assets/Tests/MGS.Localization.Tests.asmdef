@@ -1,5 +1,6 @@
 {
-    "name": "MGS.Localizer.Tests",
+    "name": "MGS.Localization.Tests",
+    "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner"
