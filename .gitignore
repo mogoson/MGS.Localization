@@ -338,3 +338,5 @@ ASALocalRun/
 /obj
 /*.csproj
 /*.sln
+/*.vsconfig
+/UserSettings

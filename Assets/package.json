@@ -1,0 +1,7 @@
+{
+    "description": "Localization utility for project develop.",
+    "displayName": "Localization",
+    "name": "com.mgs.localization",
+    "unity": "2021.3",
+    "version": "1.0.0"
+}
