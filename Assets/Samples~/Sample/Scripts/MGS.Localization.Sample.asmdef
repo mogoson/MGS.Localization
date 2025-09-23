@@ -1,0 +1,16 @@
+{
+    "name": "MGS.Localization.Sample",
+    "rootNamespace": "",
+    "references": [
+        "GUID:cfc46d909396f0349a6a023b769058fb"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

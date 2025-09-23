@@ -1,27 +1,28 @@
+[TOC]
+
 # MGS.Localization
 
 ## Summary
-- Localization utility for project develop.
+- Localizer for unity project develop.
 
-## Environment
-- Unity 5.0 or above.
-- .Net Framework 3.5 or above.
 
-## Platform
-- Windows.
-- Android.
+## Ability
 
-## Demand
-- Local text file store multi language paragraph text.
-- Utility to get paragraph text in language by key.
+- Local text file store language paragraph text.
+- Localizer to get paragraph text in language by key.
 
-## Design
+## Install
 
-- Create files for each language.
-- Store the language by "Key=Value" in text file.
-- Read language files to memory.
-- Search content by key.
+- Unity --> Window --> Package Manager --> "+" --> Add package from git URL...
 
-------
+  ```text
+  https://github.com/mogoson/MGS.Localization.git?path=/Assets
+  ```
 
-Copyright © 2021 Mogoson.	mogoson@outlook.com
+## Samples
+
+- Unity --> Window --> Package Manager --> Packages-Mogoson --> Localization --> Samples.
+
+---
+
+Copyright © 2025 Mogoson.	mogoson@outlook.com

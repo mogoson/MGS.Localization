@@ -1,62 +1,28 @@
+[TOC]
+
 # MGS.Localization
 
 ## Summary
-- Localization utility for project develop.
+- Localizer for unity project develop.
 
-## Environment
-- Unity 5.0 or above.
-- .Net Framework 3.5 or above.
 
-## Platform
-- Windows.
+## Ability
 
-## Version
+- Local text file store language paragraph text.
+- Localizer to get paragraph text in language by key.
 
-- 1.5.0
+## Install
 
-## Demand
-- Local text file store multi language paragraph text.
-- Utility to get paragraph text in language by key.
+- Unity --> Window --> Package Manager --> "+" --> Add package from git URL...
 
-## Design
+  ```text
+  https://github.com/mogoson/MGS.Localization.git?path=/Assets
+  ```
 
-- Create files for each language.
-- Store the language by "Key=Value" in text file.
-- Read language files to memory.
-- Search content by key.
+## Samples
 
-## Usage
-- Create local text file for language with the separator '='.
+- Unity --> Window --> Package Manager --> Packages-Mogoson --> Localization --> Samples.
 
-```tex
-KEY=Value
-INT_HW=Hello World
-```
+---
 
-- Deserialize language files to Localizer, and get GetParagraph to show.
-
-```C#
-//Deserialize language files to Localizer.
-foreach (var filePath in languageFiles)
-{
-    LocalizationAPI.Handler.Deserialize(languageName, languageFile, Encoding.Default);
-}
-
-//Get paragraph by key, language name is CultureInfo.CurrentCulture.Name.
-var paragraph = LocalizationAPI.Handler.GetParagraph(key);
-
-//Set current language name, get paragraph by key.
-LocalizationAPI.Handler.CuWrrent = languageName;
-var paragraph = LocalizationAPI.Handler.GetParagraph(key);
-
-//Get paragraph by language name and key.
-var paragraph = LocalizationAPI.Handler.GetParagraph(languWageName, key);
-```
-
-## Source
-
-- https://github.com/mogoson/MGS.Localization
-
-------
-
-Copyright © 2021 Mogoson.	mogoson@outlook.com
+Copyright © 2025 Mogoson.	mogoson@outlook.com

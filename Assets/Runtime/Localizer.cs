@@ -12,9 +12,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Text;
+using UnityEngine;
 
 namespace MGS.Localization
 {
@@ -30,19 +30,29 @@ namespace MGS.Localization
         public static readonly char[] SEPARATOR = new char[] { '=' };
 
         /// <summary>
+        /// Event on current language changed.
+        /// </summary>
+        public event Action<string> OnChanged;
+
+        /// <summary>
         /// Current language name.
         /// </summary>
         public string Current
         {
             set
             {
+                if (string.IsNullOrEmpty(value) || current == value)
+                {
+                    return;
+                }
                 if (languages.ContainsKey(value))
                 {
                     current = value;
+                    OnChanged?.Invoke(current);
                 }
                 else
                 {
-                    LogError("Set current language error: The language {0} is not Initialized.", value);
+                    Debug.LogError($"Set current language error: The language {value} is not deserialize.");
                 }
             }
             get { return current; }
@@ -51,36 +61,15 @@ namespace MGS.Localization
         /// <summary>
         /// Current language name.
         /// </summary>
-        private string current = null;
+        private string current = string.Empty;
 
         /// <summary>
         /// Languages paragraphs dictionary.
         /// </summary>
-        protected Dictionary<string, Dictionary<string, string>> languages = null;
-        #endregion
-
-        #region Protected Method
-        /// <summary>
-        /// Log error.
-        /// </summary>
-        /// <param name="format"></param>
-        /// <param name="args"></param>
-        protected void LogError(string format, params object[] args)
-        {
-            UnityEngine.Debug.LogErrorFormat(format, args);
-        }
+        protected Dictionary<string, Dictionary<string, string>> languages = new();
         #endregion
 
         #region Public Method
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        public Localizer()
-        {
-            current = CultureInfo.CurrentCulture.Name;
-            languages = new Dictionary<string, Dictionary<string, string>>();
-        }
-
         /// <summary>
         /// Deserialize language paragraphs from local file.
         /// </summary>
@@ -92,13 +81,13 @@ namespace MGS.Localization
         {
             if (string.IsNullOrEmpty(language))
             {
-                LogError("Deserialize language error: The language name is null or empty.");
+                Debug.LogError("Deserialize language error: The language name is null or empty.");
                 return false;
             }
 
             if (!File.Exists(languageFile))
             {
-                LogError("Deserialize language error: Can not find the language file at path {0}", languageFile);
+                Debug.LogError($"Deserialize language error: Can not find the language file at path {languageFile}");
                 return false;
             }
 
@@ -107,7 +96,7 @@ namespace MGS.Localization
                 var fileLines = File.ReadAllLines(languageFile, encoding);
                 if (fileLines == null || fileLines.Length == 0)
                 {
-                    LogError("Deserialize language error: Can not read any content in the language file at path {0}", languageFile);
+                    Debug.LogError($"Deserialize language error: Can not read any content in the language file at path {languageFile}");
                     return false;
                 }
 
@@ -115,7 +104,7 @@ namespace MGS.Localization
             }
             catch (Exception ex)
             {
-                LogError("Deserialize language exception: {0}/r/n{1}", ex.Message, ex.StackTrace);
+                Debug.LogError($"Deserialize language exception: {ex.Message}/r/n{ex.StackTrace}");
                 return false;
             }
         }
@@ -130,13 +119,13 @@ namespace MGS.Localization
         {
             if (string.IsNullOrEmpty(language))
             {
-                LogError("Deserialize language error: The language name is null or empty.");
+                Debug.LogError("Deserialize language error: The language name is null or empty.");
                 return false;
             }
 
             if (paragraphLines == null)
             {
-                LogError("Deserialize language error: The paragraph lines is null.");
+                Debug.LogError("Deserialize language error: The paragraph lines is null.");
                 return false;
             }
 
@@ -190,7 +179,7 @@ namespace MGS.Localization
         {
             if (!languages.ContainsKey(language))
             {
-                LogError("Get GetParagraphs error: The language {0} is not Initialized.", language);
+                Debug.LogError($"Get GetParagraphs error: The language {language} is not deserialize.");
                 return new Dictionary<string, string>();
             }
 
@@ -206,7 +195,7 @@ namespace MGS.Localization
         {
             if (string.IsNullOrEmpty(current))
             {
-                LogError("Get paragraph error: The current language name is not set.");
+                Debug.LogError("Get paragraph error: The current language name is not set.");
                 return null;
             }
 
@@ -223,13 +212,13 @@ namespace MGS.Localization
         {
             if (!languages.ContainsKey(language))
             {
-                LogError("Get paragraph error: The language {0} is not Initialized.", language);
+                Debug.LogError($"Get paragraph error: The language {language} is not deserialize.");
                 return null;
             }
 
             if (!languages[language].ContainsKey(key))
             {
-                LogError("Get paragraph error: The key {0} can not find in the content of language {1}.", key, language);
+                Debug.LogError($"Get paragraph error: The key {key} can not find in the content of language {language}.");
                 return null;
             }
 

@@ -10,6 +10,7 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -20,6 +21,11 @@ namespace MGS.Localization
     /// </summary>
     public interface ILocalizer
     {
+        /// <summary>
+        /// Event on current language changed.
+        /// </summary>
+        event Action<string> OnChanged;
+
         /// <summary>
         /// Current language name.
         /// </summary>
