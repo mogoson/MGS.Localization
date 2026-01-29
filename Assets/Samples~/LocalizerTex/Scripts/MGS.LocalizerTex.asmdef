@@ -1,5 +1,5 @@
 {
-    "name": "MGS.Localization.Sample",
+    "name": "MGS.LocalizerTex",
     "rootNamespace": "",
     "references": [
         "GUID:cfc46d909396f0349a6a023b769058fb"

@@ -1,7 +1,7 @@
 /*************************************************************************
  *  Copyright © 2026 Mogoson All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  ILocalizer.cs
+ *  File         :  LocalizerTMP.cs
  *  Description  :  Default.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
@@ -10,10 +10,15 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using TMPro;
+
 namespace MGS.Localize
 {
-    public interface ILocalizer
+    public class LocalizerTMP : Localizer<TextMeshProUGUI>
     {
-        void Localize();
+        protected override void OnLocalize(TextMeshProUGUI target, string localTex)
+        {
+            target.text = localTex;
+        }
     }
 }

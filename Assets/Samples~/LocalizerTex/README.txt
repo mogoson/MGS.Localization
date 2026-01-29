@@ -1,0 +1,1 @@
+Copy the Languages directory to Assets/StreamingAssets first.

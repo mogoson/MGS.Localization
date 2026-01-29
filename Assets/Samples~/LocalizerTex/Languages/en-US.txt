@@ -1,0 +1,5 @@
+Sample_Text=Text
+Sample_Button_Text=Button
+Sample_Drop_OptionA=Option A
+Sample_Drop_OptionB=Option B
+Sample_Drop_OptionC=Option C

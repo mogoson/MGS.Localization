@@ -1,0 +1,5 @@
+Sample_Text=文本
+Sample_Button_Text=按钮
+Sample_Drop_OptionA=选项A
+Sample_Drop_OptionB=选项B
+Sample_Drop_OptionC=选项C

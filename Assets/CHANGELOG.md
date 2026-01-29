@@ -7,3 +7,9 @@ All notable changes to this package will be documented in this file. The format 
 ### Release
 
 - Release as standard Unity package.
+
+## [1.1.0] - 2026-01-29
+
+### Release
+
+- Release for TextMesh Pro.
